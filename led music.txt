@@ -1,0 +1,27 @@
+/*
+ * Author: Luka Ilic
+ * E-mail: Luka_Bn@hotmail.com
+ * youtube.com/Luka9840
+ * LED music. 
+ *
+ */
+
+const int led_pin = 10;
+const int pin_of_module = A0;
+
+void setup() {
+  pinMode(led_pin, OUTPUT);
+  pinMode(pin_of_module, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int value = analogWrite(pin_of_module);
+  int output = constrain(255 - map(vrijednost, 0, 1023, 0, 255) - 5, 0, 255);
+  
+  Serial.println(value);
+  Serial.println(output);
+  
+  analogWrite(led_pin, output);
+  delay(10);
+}
